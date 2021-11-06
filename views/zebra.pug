@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1= title
+  p 
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let zebra = [
+                    {
+                        "name": "Scissor",
+                        "Color": "white",
+                        "age": 54
+                    },
+                    {
+                        "name": "Sunny",
+                        "Color": "black",
+                        "age": 32
+                    },
+                    {
+                        "name": "Bunny",
+                        "Color": "brown",
+                        "age": 21
+                    },                   
+                ]
+            each v,index in zebra 
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.name}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.Color}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.age}
+
+
+  script.                
+        function buy(intemNo)
+        {
+              alert(`you purchased Item ${intemNo+1}`)
+        }               
