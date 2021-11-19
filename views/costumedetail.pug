@@ -2,11 +2,13 @@ extends layout
  
 block content 
   h1= title 
- 
-  - let costumeid = toShow._id 
-  - let costume_type = toShow.costume_type 
-  - let costumecost = toShow.cost 
-  - let costumesize = toShow.size 
+  if (toShow == null)
+    h2 Np instance to show 
+  else
+    - let costumeid = toShow._id 
+    - let costume_type = toShow.costume_type 
+    - let costumecost = toShow.cost 
+    - let costumesize = toShow.size 
   div 
     div.row 
       div(class='costumeAttr mr-3') Costume ID is: 
